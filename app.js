@@ -1,41 +1,39 @@
-var http = require("http");
+var express = require("express");
 var config = require("./config");
-const readline = require("readline");
-var querystring = require('querystring');
+var userModel = require("./app/models/user");
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var port = process.env.PORT || 8080;
+var router = express.Router();
+
+// ROUTES FOR OUR API
+// =============================================================================
+
+router.use(function(req, res, next) {
+    // do logging
+    console.log('Something is happening.');
+    next(); // make sure we go to the next routes and don't stop here
 });
 
-var post_options = {
-    host: '',
-    path: '',
-    method: 'POST'
-};
-
-var post_req = http.request(post_options, function(res) {
-    res.on('data', function (chunk) {
-        console.log('Response: ' + chunk);
-    });
+router.get('/', function(req, res) {
+    res.json({ message: 'Welcome to tappinator API' });
 });
 
-rl.question("What is your fav beer? ", function(answer) {
-  console.log("Thank you!");
-
-  var post_data = querystring.stringify({
-    "text" : "Some like me, Tappinator. But some people also like "
-  });
-
-  post_req.write(post_data);
-  post_req.end();
-  rl.close();
+router.route('/beer').get(function(req, res){
+    var data = userModel.getTopFiveLatestCheckins();
+    res.json(data);
 });
 
+router.route('/user').get(function(req, res){
+    res.json({ message: 'This will be the User API point' });
+});
 
-/*http.createServer(function (request, response) {
+app.use('/api', router);
 
-   response.writeHead(200, {'Content-Type': 'text/plain'});
-
-   response.end('Hello Beer\n');
-}).listen(8081);*/
+app.listen(port);
+console.log('Magic happens on port ' + port);

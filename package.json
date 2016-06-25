@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/samunit/tappinator#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "chai": "^3.5.0",
+    "chai-sorted": "^0.1.0",
     "express": "^4.14.0",
+    "lodash": "^4.13.1",
     "mocha": "^2.5.3",
     "request": "^2.72.0"
   }

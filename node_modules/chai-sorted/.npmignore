@@ -1,0 +1,11 @@
+.idea
+
+# Logs
+logs
+*.log
+
+# Source
+.travis.yml
+.gitignore
+.jshintrc
+node_modules
