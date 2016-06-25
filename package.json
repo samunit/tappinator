@@ -1,0 +1,25 @@
+{
+  "name": "tappinator",
+  "version": "1.0.0",
+  "description": "Untapped slack integration",
+  "main": "app.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samunit/tappinator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samunit/tappinator/issues"
+  },
+  "homepage": "https://github.com/samunit/tappinator#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "mocha": "^2.5.3",
+    "request": "^2.72.0"
+  }
+}
