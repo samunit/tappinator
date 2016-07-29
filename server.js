@@ -13,6 +13,8 @@ var router = express.Router();
 // ROUTES FOR OUR API
 // =============================================================================
 
+//Kris er azure mester
+
 router.use(function(req, res, next) {
     // do logging
     console.log('Something is happening.');
