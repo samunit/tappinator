@@ -1,5 +1,4 @@
 var express = require("express");
-var config = require("./config");
 var userModel = require("./app/models/user");
 
 var app = express();
