@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = 80;
+var port = process.env.PORT || 1337;
 var router = express.Router();
 
 // ROUTES FOR OUR API
