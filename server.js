@@ -20,7 +20,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-    res.json({ message: 'Welcome to tappinator API' });
+    res.json({ message: 'Welcome to tappinator API: ' + process.version });
 });
 
 router.route('/beer').get(function(req, res){
