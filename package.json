@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/samunit/tappinator.git"
   },
+  "engines": {
+    "node": "6.3.0"
+  }
   "author": "",
   "license": "ISC",
   "bugs": {
