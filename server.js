@@ -9,11 +9,9 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 1337;
 var router = express.Router();
 
-// ROUTES FOR OUR API
-// =============================================================================
+const feedRouter = require('./app/routers/feed');
 
-//Kris er azure mester
-
+//TODO: remove these
 router.use(function(req, res, next) {
     // do logging
     console.log('Something is happening.');
@@ -33,6 +31,9 @@ router.route('/user').get(function(req, res){
 });
 
 app.use('/api', router);
+app.use('/api/feed', feedRouter);
+
+//TODO: yep all of the above..
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
