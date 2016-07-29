@@ -1,5 +1,4 @@
 var express = require("express");
-var userModel = require("./app/models/user");
 
 var app = express();
 var bodyParser = require('body-parser');
@@ -26,8 +25,7 @@ router.get('/', function(req, res) {
 });
 
 router.route('/beer').get(function(req, res){
-    var data = userModel.getTopFiveLatestCheckins();
-    res.json(data);
+    res.json({ message: 'This will be the Beer API point' });
 });
 
 router.route('/user').get(function(req, res){
