@@ -107,8 +107,16 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 
 :: 4. Copy app-folder to node_modules
 echo Copying %DEPLOYMENT_SOURCE%\app to %DEPLOYMENT_TARGET%\node_modules
-dir %DEPLOYMENT_TARGET%\app\middleware
-xcopy %DEPLOYMENT_SOURCE%\app %DEPLOYMENT_TARGET%\node_modules /Y
+IF EXIST %DEPLOYMENT_TARGET%\node_modules\app (
+  echo removing app copy in node_modules
+  rmdir %DEPLOYMENT_TARGET%\node_modules\app /S /Q
+)
+
+echo creating folder %DEPLOYMENT_TARGET%\node_modules\app
+mkdir %DEPLOYMENT_TARGET%\node_modules\app
+
+echo copying from %DEPLOYMENT_TARGET%\app into %DEPLOYMENT_TARGET%\node_modules\app
+xcopy %DEPLOYMENT_TARGET%\app %DEPLOYMENT_TARGET%\node_modules\app /Y /S
 echo Copy successful
 
 
