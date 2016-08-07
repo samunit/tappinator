@@ -4,7 +4,8 @@
   "description": "Untapped slack integration",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha app/**/__tests__/*.js --reporter spec"
+    "test": "./node_modules/.bin/mocha app/**/__tests__/*.js --reporter spec",
+    "start": "node ./server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/samunit/tappinator#readme",
   "dependencies": {
+    "app-module-path": "^1.1.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.13.1",
