@@ -3,7 +3,7 @@ Untapped Slack integration for Team Rubberduck.
 
 ## Get the local code up and running
 
-Note: to be able to run the post install script you must run nom install in an elevated command prompt. Either start Powershell as administrator (Windows) or use sudo (Mac/Linux).
+Note: to be able to run the npm post install script you must run `npm install` in an elevated command prompt. Either start Powershell as administrator (Windows) or use sudo (Mac/Linux).
 
 1. Clone the repo
 2. `cd repo-folder`
