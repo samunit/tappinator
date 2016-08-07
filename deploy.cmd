@@ -107,7 +107,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 
 :: 4. Copy app-folder to node_modules
 echo Copying %DEPLOYMENT_SOURCE%\app to %DEPLOYMENT_TARGET%\node_modules
-dir %DEPLOYMENT_TARGET%\app
+dir %DEPLOYMENT_TARGET%\app\middleware
 xcopy %DEPLOYMENT_SOURCE%\app %DEPLOYMENT_TARGET%\node_modules /Y
 echo Copy successful
 
