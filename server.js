@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const router = require('app/middleware/router');
 const configMiddleWare = require('app/middleware/configMiddleWare');
+const authMiddleware = require('app/middleware/authMiddleware');
 
 const port = process.env.PORT || 1337;
 
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/api', configMiddleWare);
+app.use('/api', authMiddleware);
 app.use('/api', router);
 
 app.listen(port);

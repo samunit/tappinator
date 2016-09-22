@@ -1,4 +1,4 @@
-const expect = require("chai").expect;
+const expect = require('chai').expect;
 const configMiddleWare = require('../configMiddleWare');
 const config = require('app/utils/config');
 const sinon = require('sinon');
